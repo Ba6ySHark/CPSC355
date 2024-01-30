@@ -1,0 +1,156 @@
+Script started on 2024-01-30 15:35:31-07:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="172" LINES="41"]
+
+Disk quotas for user stepan.susorov (uid 38371809): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+10.44.125.21:/CSUSERS
+                  9312K  10240M  10240M             208    100k    100k        
+
+]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] gcc assign1a.s -g -o assign1a
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] ./assign1[K[K[K[K[K[K[K[K[Kgdb assign1a
+[?2004l[35;1mGNU gdb (GDB) Fedora Linux 13.2-6.fc38[m
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <[32mhttp://gnu.org/licenses/gpl.html[m>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+[32m<https://www.gnu.org/software/gdb/bugs/>[m.
+Find the GDB manual and other documentation resources online at:
+    <[32mhttp://www.gnu.org/software/gdb/documentation/[m>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1a[m...
+[?2004h(gdb) b loop
+[?2004lBreakpoint 1 at [34m0x4101f0[m: file [32massign1a.s[m, line 24.
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/csusers/stepan.susorov/cpsc355/CPSC355/Assignment1/assign1a[m 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <[32mhttps://debuginfod.fedoraproject.org/[m>
+[?2004hEnable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+Downloading separate debug info for [32msystem-supplied DSO at 0xfffff7ffb000[m
+[###                                                                                                                                                                     ]                                                                                                                                                                                                                                                                                                                                                        [Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mloop[m () at [32massign1a.s[m:24
+24			[01;34mmul[m x[35m24[m[31m,[m x[35m19[m[31m,[m x[35m19[m					[31m//[m Squares the value of x [01;34mand[m stores it [01;34min[m register [35m24[m
+[?2004h[?2004l[?2004h(gdb) d/i [K[K[Kisplay/i $pc
+[?2004l1: x/i $pc
+=> [34m0x4101f0[m <[33mloop[m>:	[32mmul[m	[31mx24[m, [31mx19[m, [31mx19[m
+[?2004h(gdb) p $x19
+[?2004l$1 = -10
+[?2004h(gdb) ni
+[?2004l25			[01;34mmul[m x[35m24[m[31m,[m x[35m24[m[31m,[m x[35m19[m					[31m//[m Multiplies the value stored [01;34min[m register [35m24[m by x
+1: x/i $pc
+=> [34m0x4101f4[m <[33mloop[m+4>:	[32mmul[m	[31mx24[m, [31mx24[m, [31mx19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l26			[01;34mmul[m x[35m24[m[31m,[m x[35m24[m[31m,[m x[35m21[m					[31m//[m Multiplies the value stored [01;34min[m register [35m24[m by [35m3[m
+1: x/i $pc
+=> [34m0x4101f8[m <[33mloop[m+8>:	[32mmul[m	[31mx24[m, [31mx24[m, [31mx21[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l28			[01;34mmul[m x[35m25[m[31m,[m x[35m19[m[31m,[m x[35m19[m					[31m//[m Squares the value of x [01;34mand[m stores it [01;34min[m register [35m25[m
+1: x/i $pc
+=> [34m0x4101fc[m <[33mloop[m+12>:	[32mmul[m	[31mx25[m, [31mx19[m, [31mx19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l29			[01;34mmul[m x[35m25[m[31m,[m x[35m25[m[31m,[m x[35m22[m					[31m//[m Multiplies the value stored [01;34min[m register [35m25[m by [35m31[m
+1: x/i $pc
+=> [34m0x410200[m <[33mloop[m+16>:	[32mmul[m	[31mx25[m, [31mx25[m, [31mx22[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l31			[01;34mmul[m x[35m26[m[31m,[m x[35m19[m[31m,[m x[35m23[m					[31m//[m Multiplies the value of x by [31m-[m[35m15[m [01;34mand[m stores it [01;34min[m register [35m26[m
+1: x/i $pc
+=> [34m0x410204[m <[33mloop[m+20>:	[32mmul[m	[31mx26[m, [31mx19[m, [31mx23[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l33			[01;34madd[m x[35m27[m[31m,[m x[35m24[m[31m,[m x[35m25[m					[31m//[m Adds the values stored [01;34min[m registers [35m24[m [01;34mand[m [35m25[m
+1: x/i $pc
+=> [34m0x410208[m <[33mloop[m+24>:	[32madd[m	[31mx27[m, [31mx24[m, [31mx25[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l34			[01;34madd[m x[35m27[m[31m,[m x[35m27[m[31m,[m x[35m26[m					[31m//[m Adds the values stored [01;34min[m registers [35m26[m [01;34mand[m [35m27[m
+1: x/i $pc
+=> [34m0x41020c[m <[33mloop[m+28>:	[32madd[m	[31mx27[m, [31mx27[m, [31mx26[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l35			[01;34madd[m x[35m27[m[31m,[m x[35m27[m[31m,[m #[31m-[m[35m127[m					[31m//[m Increments the values stored [01;34min[m register [35m27[m by [31m-[m[35m127[m
+1: x/i $pc
+=> [34m0x410210[m <[33mloop[m+32>:	[32msub[m	[31mx27[m, [31mx27[m, [34m#0x7f[m
+[?2004h[?2004l[?2004h(gdb) p $x27
+[?2004l$2 = 250
+[?2004h(gdb) ni
+[?2004l37			b min							[31m//[m branch to min
+1: x/i $pc
+=> [34m0x410214[m <[33mloop[m+36>:	[32mb[m	[34m0x410234[m <[33mmin[m>
+[?2004h[?2004l[?2004h(gdb) p $x19[K[K27
+[?2004l$3 = 123
+[?2004h(gdb) p $x28
+[?2004l$4 = 0
+[?2004h(gdb) ni
+[?2004l[33mmin[m () at [32massign1a.s[m:50
+50			[01;34mcmp[m x[35m19[m[31m,[m #[31m-[m[35m10[m						[31m//[m Compares the current value of x to [31m-[m[35m10[m
+1: x/i $pc
+=> [34m0x410234[m <[33mmin[m>:	[32mcmn[m	[31mx19[m, [34m#0xa[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l51			b[31m.[m[01;34meq[m set_min						[31m//[m if they are equal branches to set_min
+1: x/i $pc
+=> [34m0x410238[m <[33mmin[m+4>:	[32mb.eq[m	[34m0x410240[m <[33mset_min[m>[37;2m  // b.none[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mset_min[m () at [32massign1a.s[m:55
+55			[01;34mmov[m x[35m28[m[31m,[m x[35m27[m						[31m//[m Moves the value from register [35m27[m to register [35m28[m
+1: x/i $pc
+=> [34m0x410240[m <[33mset_min[m>:	[32mmov[m	[31mx28[m, [31mx27[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l56			b after_cmp						[31m//[m branches to after_cmp
+1: x/i $pc
+=> [34m0x410244[m <[33mset_min[m+4>:	[32mb[m	[34m0x410218[m <[33mafter_cmp[m>
+[?2004h[?2004l[?2004h(gdb) p $x28
+[?2004l$5 = 123
+[?2004h(gdb) ni
+[?2004l[33mafter_cmp[m () at [32massign1a.s[m:40
+40			ldr x[35m0[m[31m,[m [31m=[mout_string					[31m//[m Loads address of out_string to register [35m0[m
+1: x/i $pc
+=> [34m0x410218[m <[33mafter_cmp[m>:	[32mldr[m	[31mx0[m, [34m0x410260[m <[33mexit[m+12>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l41			[01;34mmov[m x[35m1[m[31m,[m x[35m19[m						[31m//[m Passes value [01;34min[m register [35m19[m as an argument to the function
+1: x/i $pc
+=> [34m0x41021c[m <[33mafter_cmp[m+4>:	[32mmov[m	[31mx1[m, [31mx19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l42			[01;34mmov[m x[35m2[m[31m,[m x[35m27[m						[31m//[m Passes value [01;34min[m register [35m27[m as an argument to the function
+1: x/i $pc
+=> [34m0x410220[m <[33mafter_cmp[m+8>:	[32mmov[m	[31mx2[m, [31mx27[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l43			[01;34mmov[m x[35m3[m[31m,[m x[35m28[m						[31m//[m Passes value [01;34min[m register [35m28[m as an argument to the funtion
+1: x/i $pc
+=> [34m0x410224[m <[33mafter_cmp[m+12>:	[32mmov[m	[31mx3[m, [31mx28[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l44			[32mbl[m printf						[31m//[m Calls printf function
+1: x/i $pc
+=> [34m0x410228[m <[33mafter_cmp[m+16>:	[32mbl[m	[34m0x410070[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lx: -10, y: 123, current minimum: 123
+46			[01;34madd[m x[35m19[m[31m,[m x[35m19[m[31m,[m #[35m1[m					[31m//[m Increments current value of x by [35m1[m
+1: x/i $pc
+=> [34m0x41022c[m <[33mafter_cmp[m+20>:	[32madd[m	[31mx19[m, [31mx19[m, [34m#0x1[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l47			b loop_pretest						[31m//[m branches to loop_pretest
+1: x/i $pc
+=> [34m0x410230[m <[33mafter_cmp[m+24>:	[32mb[m	[34m0x4101e8[m <[33mloop_pretest[m>
+[?2004h[?2004l[?2004h(gdb) p $x19
+[?2004l$6 = -9
+[?2004h(gdb) ni
+[?2004l
+Breakpoint 1, [33mloop[m () at [32massign1a.s[m:24
+24			[01;34mmul[m x[35m24[m[31m,[m x[35m19[m[31m,[m x[35m19[m					[31m//[m Squares the value of x [01;34mand[m stores it [01;34min[m register [35m24[m
+1: x/i $pc
+=> [34m0x4101f0[m <[33mloop[m>:	[32mmul[m	[31mx24[m, [31mx19[m, [31mx19[m
+[?2004h[?2004l[?2004h(gdb) q
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 462734] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] exit
+[?2004lexit
+
+Script done on 2024-01-30 15:42:50-07:00 [COMMAND_EXIT_CODE="0"]
