@@ -1,0 +1,69 @@
+Script started on 2024-01-30 16:01:20-07:00 [TERM="xterm-256color" TTY="/dev/pts/41" COLUMNS="172" LINES="41"]
+
+Disk quotas for user stepan.susorov (uid 38371809): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+10.44.125.21:/CSUSERS
+                  9324K  10240M  10240M             209    100k    100k        
+
+]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] m4 assign1b.asm > assign1b.s
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] gcc assign1b.s -g -o assign1b
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] gdb assign1b
+[?2004l[35;1mGNU gdb (GDB) Fedora Linux 13.2-6.fc38[m
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <[32mhttp://gnu.org/licenses/gpl.html[m>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+[32m<https://www.gnu.org/software/gdb/bugs/>[m.
+Find the GDB manual and other documentation resources online at:
+    <[32mhttp://www.gnu.org/software/gdb/documentation/[m>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1b[m...
+[?2004h(gdb) b exit
+[?2004lBreakpoint 1 at [34m0x41024c[m: file [32massign1b.s[m, line 70.
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/csusers/stepan.susorov/cpsc355/CPSC355/Assignment1/assign1b[m 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <[32mhttps://debuginfod.fedoraproject.org/[m>
+[?2004hEnable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+Downloading separate debug info for [32msystem-supplied DSO at 0xfffff7ffb000[m
+[###                                                                                                                                                                     ][ ###                                                                                                                                                                    ]                                                                                                                                                                                                                                                                                                                                                        [Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+                                                                                                                                                                            X: -10, Y: 123, current minimum: 123
+X: -9, Y: 332, current minimum: 123
+X: -8, Y: 441, current minimum: 123
+X: -7, Y: 468, current minimum: 123
+X: -6, Y: 431, current minimum: 123
+X: -5, Y: 348, current minimum: 123
+X: -4, Y: 237, current minimum: 123
+X: -3, Y: 116, current minimum: 116
+X: -2, Y: 3, current minimum: 3
+X: -1, Y: -84, current minimum: -84
+X: 0, Y: -127, current minimum: -127
+X: 1, Y: -108, current minimum: -127
+X: 2, Y: -9, current minimum: -127
+X: 3, Y: 188, current minimum: -127
+X: 4, Y: 501, current minimum: -127
+
+Breakpoint 1.1, [33mexit[m () at [32massign1b.s[m:70
+70			ldp x[35m29[m[31m,[m x[35m30[m[31m,[m [31m[[m[32msp[m[31m],[m [35m16[m					[31m//[m Restore the [32mSP[m to x[35m29[m [01;34mand[m x[35m30[m[31m,[m then do [32mSP[m [31m+[m [35m16[m [01;34mand[m set to [32mSP[m
+[?2004h[?2004l[?2004h(gdb) p $x21
+[?2004l$1 = -127
+[?2004h(gdb) q
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 478715] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment1[?2004h[UC stepan.susorov@csa1 Assignment1] exit
+[?2004lexit
+
+Script done on 2024-01-30 16:05:06-07:00 [COMMAND_EXIT_CODE="0"]
