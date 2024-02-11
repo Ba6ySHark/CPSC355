@@ -1,0 +1,211 @@
+Script started on 2024-02-09 16:08:35-07:00 [TERM="xterm-256color" TTY="/dev/pts/33" COLUMNS="172" LINES="41"]
+
+Disk quotas for user stepan.susorov (uid 38371809): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+10.44.125.21:/CSUSERS
+                  7440K  10240M  10240M             212    100k    100k        
+
+]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment2[?2004h[UC stepan.susorov@csa1 Assignment2] m4 assign2a.asm > assign2a.s
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment2[?2004h[UC stepan.susorov@csa1 Assignment2] gcc assign2a.s -g -o assign2a
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment2[?2004h[UC stepan.susorov@csa1 Assignment2] gdb assign2a
+[?2004l[35;1mGNU gdb (GDB) Fedora Linux 13.2-6.fc38[m
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <[32mhttp://gnu.org/licenses/gpl.html[m>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+[32m<https://www.gnu.org/software/gdb/bugs/>[m.
+Find the GDB manual and other documentation resources online at:
+    <[32mhttp://www.gnu.org/software/gdb/documentation/[m>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign2a[m...
+[?2004h(gdb) display/i $pc
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x410228[m: file [32massign2a.s[m, line 19.
+[?2004h(gdb) b combine
+[?2004lBreakpoint 2 at [34m0x4102f8[m: file [32massign2a.s[m, line 104.
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/csusers/stepan.susorov/cpsc355/CPSC355/Assignment2/assign2a[m 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <[32mhttps://debuginfod.fedoraproject.org/[m>
+[?2004hEnable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+                                                                                                                                                                                                                                                                                                                                                        [Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32massign2a.s[m:19
+19				stp x[35m29[m[31m,[m x[35m30[m[31m,[m [31m[[m[32msp[m[31m,[m [31m-[m[35m16[m[31m]![m						[31m//[m Stores the LP [01;34mand[m [32mSP[m to the stack
+1: x/i $pc
+=> [34m0x410228[m <[33mmain[m>:	[32mstp[m	[31mx29[m, [31mx30[m, [[31msp[m, [34m#-16[m]!
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l20				[01;34mmov[m x[35m29[m[31m,[m [32msp[m								[31m//[m Moves [32mSP[m to FP
+1: x/i $pc
+=> [34m0x41022c[m <[33mmain[m+4>:	[32mmov[m	[31mx29[m, [31msp[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l22				[01;34mmov[m w[35m20[m[31m,[m #[35m254[m							[31m//[m Moves the first [35m8[m bits of number [31m-[m[35m16843010[m to the multiplier
+1: x/i $pc
+=> [34m0x410230[m <[33mmain[m+8>:	[32mmov[m	[31mw20[m, [34m#0xfe                  [m[37;2m	// #254[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l23				[01;34mlsl[m w[35m20[m[31m,[m w[35m20[m[31m,[m [35m8[m					[31m//[m Logically shifts w[35m19[m left by [35m8[m bits
+1: x/i $pc
+=> [34m0x410234[m <[33mmain[m+12>:	[32mlsl[m	[31mw20[m, [31mw20[m, [34m#8[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l25				[01;34mmov[m w[35m27[m[31m,[m #[35m254[m								[31m//[m Moves the second [35m8[m bits of number [31m-[m[35m16843010[m to the register [35m27[m
+1: x/i $pc
+=> [34m0x410238[m <[33mmain[m+16>:	[32mmov[m	[31mw27[m, [34m#0xfe                  [m[37;2m	// #254[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l26				orr w[35m20[m[31m,[m w[35m20[m[31m,[m w[35m27[m					[31m//[m Adds these [35m8[m bits to the w[35m20[m
+1: x/i $pc
+=> [34m0x41023c[m <[33mmain[m+20>:	[32morr[m	[31mw20[m, [31mw20[m, [31mw27[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l27				[01;34mlsl[m w[35m20[m[31m,[m w[35m20[m[31m,[m [35m8[m					[31m//[m Logically shifts w[35m19[m left by [35m8[m bits
+1: x/i $pc
+=> [34m0x410240[m <[33mmain[m+24>:	[32mlsl[m	[31mw20[m, [31mw20[m, [34m#8[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l29				[01;34mmov[m w[35m27[m[31m,[m #[35m254[m								[31m//[m Moves the third [35m8[m bits of number [31m-[m[35m16843010[m to the register [35m27[m
+1: x/i $pc
+=> [34m0x410244[m <[33mmain[m+28>:	[32mmov[m	[31mw27[m, [34m#0xfe                  [m[37;2m	// #254[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l30				orr w[35m20[m[31m,[m w[35m20[m[31m,[m w[35m27[m					[31m//[m Adds these [35m8[m bits to the w[35m20[m
+1: x/i $pc
+=> [34m0x410248[m <[33mmain[m+32>:	[32morr[m	[31mw20[m, [31mw20[m, [31mw27[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l31				[01;34mlsl[m w[35m20[m[31m,[m w[35m20[m[31m,[m [35m8[m					[31m//[m Logically shifts w[35m20[m left by [35m8[m bits
+1: x/i $pc
+=> [34m0x41024c[m <[33mmain[m+36>:	[32mlsl[m	[31mw20[m, [31mw20[m, [34m#8[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l33				[01;34mmov[m w[35m27[m[31m,[m #[35m254[m								[31m//[m Moves the last [35m8[m bits of number [31m-[m[35m16843010[m to the register [35m27[m
+1: x/i $pc
+=> [34m0x410250[m <[33mmain[m+40>:	[32mmov[m	[31mw27[m, [34m#0xfe                  [m[37;2m	// #254[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l34				orr w[35m20[m[31m,[m w[35m20[m[31m,[m w[35m27[m					[31m//[m Adds these [35m8[m bits to the w[35m20[m
+1: x/i $pc
+=> [34m0x410254[m <[33mmain[m+44>:	[32morr[m	[31mw20[m, [31mw20[m, [31mw27[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l36				[01;34mmov[m w[35m19[m[31m,[m #[35m70[m							[31m//[m [01;34mSets[m multiplier to [35m70[m
+1: x/i $pc
+=> [34m0x410258[m <[33mmain[m+48>:	[32mmov[m	[31mw19[m, [34m#0x46                  [m[37;2m	// #70[m
+[?2004h[?2004l[?2004h(gdb) \[Kp $w20
+[?2004l$1 = 4278124286
+[?2004h(gdb) ni
+[?2004l37				[01;34mmov[m w[35m21[m[31m,[m #[35m0[m								[31m//[m [01;34mSets[m product to [35m0[m
+1: x/i $pc
+=> [34m0x41025c[m <[33mmain[m+52>:	[32mmov[m	[31mw21[m, [34m#0x0                   [m[37;2m	// #0[m
+[?2004h[?2004l[?2004h(gdb) p $w19
+[?2004l$2 = 70
+[?2004h(gdb) ni
+[?2004l38				[01;34mmov[m w[35m22[m[31m,[m #[35m0[m								[31m//[m [01;34mSets[m i to [35m0[m
+1: x/i $pc
+=> [34m0x410260[m <[33mmain[m+56>:	[32mmov[m	[31mw22[m, [34m#0x0                   [m[37;2m	// #0[m
+[?2004h[?2004l[?2004h(gdb) p $w21
+[?2004l$3 = 0
+[?2004h(gdb) ni
+[?2004l40				ldr x[35m0[m[31m,[m [31m=[minitial_values							[31m//[m Loads address of initial_values string to register [35m0[m
+1: x/i $pc
+=> [34m0x410264[m <[33mmain[m+60>:	[32mldr[m	[31mx0[m, [34m0x410328[m <[33mexit[m+8>
+[?2004h[?2004l[?2004h(gdb) p $w22
+[?2004l$4 = 0
+[?2004h(gdb) ni
+[?2004l41				[01;34mmov[m w[35m1[m[31m,[m w[35m19[m							[31m//[m Passes the value of w[35m19[m as the firts argument
+1: x/i $pc
+=> [34m0x410268[m <[33mmain[m+64>:	[32mmov[m	[31mw1[m, [31mw19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l42				[01;34mmov[m w[35m2[m[31m,[m w[35m19[m							[31m//[m Passes the value of w[35m19[m as the second argument
+1: x/i $pc
+=> [34m0x41026c[m <[33mmain[m+68>:	[32mmov[m	[31mw2[m, [31mw19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l43				[01;34mmov[m w[35m3[m[31m,[m w[35m20[m							[31m//[m Passes the value of w[35m20[m as the third argument
+1: x/i $pc
+=> [34m0x410270[m <[33mmain[m+72>:	[32mmov[m	[31mw3[m, [31mw20[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l44				[01;34mmov[m w[35m4[m[31m,[m w[35m20[m							[31m//[m Passes the value of w[35m20[m as the fourth argument
+1: x/i $pc
+=> [34m0x410274[m <[33mmain[m+76>:	[32mmov[m	[31mw4[m, [31mw20[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l45				[32mbl[m printf								[31m//[m Calls printf function
+1: x/i $pc
+=> [34m0x410278[m <[33mmain[m+80>:	[32mbl[m	[34m0x410070[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) nnnnnnnnnnnnnnnnnnnnn[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ki
+[?2004lMultiplier = 0x00000046 (70)  Multiplicand = 0xfefefefe (-16843010) 
+
+47				[01;34mcmp[m w[35m19[m[31m,[m #[35m0[m							[31m//[m Compares current value of multiplier to [35m0[m
+1: x/i $pc
+=> [34m0x41027c[m <[33mmain[m+84>:	[32mcmp[m	[31mw19[m, [34m#0x0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l48				b[31m.[m[01;34mlt[m set_true								[31m//[m if less than [31m->[m branches to set_true
+1: x/i $pc
+=> [34m0x410280[m <[33mmain[m+88>:	[32mb.lt[m	[34m0x410288[m <[33mset_true[m>[37;2m  // b.tstop[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l49				b set_false								[31m//[m else [31m->[m branches to set_false
+1: x/i $pc
+=> [34m0x410284[m <[33mmain[m+92>:	[32mb[m	[34m0x410290[m <[33mset_false[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lProduct = 0xffffffff Multiplier = 0xb9b9b974 
+
+Breakpoint 2, [33mcombine[m () at [32massign2a.s[m:104
+104				sxtw x[35m28[m[31m,[m w[35m21[m							[31m//[m Saves the value of w[35m21[m [01;34min[m a [35m64[m[31m-[mbit register
+1: x/i $pc
+=> [34m0x4102f8[m <[33mcombine[m>:	[32msxtw[m	[31mx28[m, [31mw21[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l105				[01;34mand[m x[35m25[m[31m,[m x[35m28[m[31m,[m [35m0xFFFFFFFF[m						[31m//[m Ands the value from register [35m28[m with [35m0xFFFFFFFF[m
+1: x/i $pc
+=> [34m0x4102fc[m <[33mcombine[m+4>:	[32mand[m	[31mx25[m, [31mx28[m, [34m#0xffffffff[m
+[?2004h[?2004l[?2004h(gdb) p $x28
+[?2004l$5 = -1
+[?2004h(gdb) ni
+[?2004l107				[01;34mlsl[m x[35m25[m[31m,[m x[35m25[m[31m,[m [35m32[m							[31m//[m Shifts left x[35m25[m by [35m32[m bits
+1: x/i $pc
+=> [34m0x410300[m <[33mcombine[m+8>:	[32mlsl[m	[31mx25[m, [31mx25[m, [34m#32[m
+[?2004h[?2004l[?2004h(gdb) p $x28[K5
+[?2004l$6 = 4294967295
+[?2004h(gdb) ni
+[?2004l108				sxtw x[35m28[m[31m,[m w[35m19[m							[31m//[m Saves the value of w[35m19[m [01;34min[m a [35m64[m[31m-[mbit register
+1: x/i $pc
+=> [34m0x410304[m <[33mcombine[m+12>:	[32msxtw[m	[31mx28[m, [31mw19[m
+[?2004h[?2004l[?2004h(gdb) p $x25
+[?2004l$7 = -4294967296
+[?2004h(gdb) ni
+[?2004l109				[01;34mand[m x[35m26[m[31m,[m x[35m28[m[31m,[m [35m0xFFFFFFFF[m						[31m//[m Ands the value from register [35m28[m with [35m0xFFFFFFFF[m
+1: x/i $pc
+=> [34m0x410308[m <[33mcombine[m+16>:	[32mand[m	[31mx26[m, [31mx28[m, [34m#0xffffffff[m
+[?2004h[?2004l[?2004h(gdb) p $x28
+[?2004l$8 = -1179010700
+[?2004h(gdb) ni
+[?2004l111				[01;34madd[m x[35m24[m[31m,[m x[35m25[m[31m,[m x[35m26[m						[31m//[m Adds the value from x[35m25[m to the value from x[35m26[m
+1: x/i $pc
+=> [34m0x41030c[m <[33mcombine[m+20>:	[32madd[m	[31mx24[m, [31mx25[m, [31mx26[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l113				ldr x[35m0[m[31m,[m [31m=[mresult_string							[31m//[m Loads address of result_string to register [35m0[m
+1: x/i $pc
+=> [34m0x410310[m <[33mcombine[m+24>:	[32mldr[m	[31mx0[m, [34m0x410338[m <[33mexit[m+24>
+[?2004h[?2004l[?2004h(gdb) p $x24
+[?2004l$9 = -1179010700
+[?2004h(gdb) ni
+[?2004l114				[01;34mmov[m x[35m1[m[31m,[m x[35m24[m								[31m//[m Passes x[35m24[m as the first argument
+1: x/i $pc
+=> [34m0x410314[m <[33mcombine[m+28>:	[32mmov[m	[31mx1[m, [31mx24[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l115				[01;34mmov[m x[35m2[m[31m,[m x[35m24[m								[31m//[m Passes x[35m24[m as the second argument
+1: x/i $pc
+=> [34m0x410318[m <[33mcombine[m+32>:	[32mmov[m	[31mx2[m, [31mx24[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l116				[32mbl[m printf								[31m//[m Calls printf function
+1: x/i $pc
+=> [34m0x41031c[m <[33mcombine[m+36>:	[32mbl[m	[34m0x410070[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l64-bit Result = 0xffffffffb9b9b974 (-1179010700) 
+[Inferior 1 (process 956661) exited with code 062]
+[?2004h[?2004l[?2004h(gdb) q
+[?2004l]0;stepan.susorov@csa1:~/cpsc355/CPSC355/Assignment2[?2004h[UC stepan.susorov@csa1 Assignment2] exit
+[?2004lexit
+
+Script done on 2024-02-09 16:14:52-07:00 [COMMAND_EXIT_CODE="0"]
