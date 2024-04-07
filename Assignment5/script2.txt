@@ -1,0 +1,19 @@
+Script started on 2024-03-29 22:34:53-06:00 [TERM="xterm-256color" TTY="/dev/pts/91" COLUMNS="172" LINES="41"]
+
+Disk quotas for user stepan.susorov (uid 38371809): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+10.44.125.21:/CSUSERS
+                  8004K  10240M  10240M             279    100k    100k        
+
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] m5[K4 a5b.asm > a5b.s
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] gcc a5b.s -o a5b
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] ./a5b 1 31
+[?2004lJanuary 31st is Winter
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] ./a5b 1 31[K[K[K[K4 4
+[?2004lApril 4th is Spring
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] ./a5b 4 4[K[K[K10 1
+[?2004lOctober 1st is Fall
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] exit
+[?2004lexit
+
+Script done on 2024-03-29 22:35:37-06:00 [COMMAND_EXIT_CODE="20"]

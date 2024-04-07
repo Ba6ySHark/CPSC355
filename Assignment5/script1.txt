@@ -1,0 +1,85 @@
+Script started on 2024-03-29 22:32:21-06:00 [TERM="xterm-256color" TTY="/dev/pts/91" COLUMNS="172" LINES="41"]
+
+Disk quotas for user stepan.susorov (uid 38371809): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+10.44.125.21:/CSUSERS
+                  8000K  10240M  10240M             278    100k    100k        
+
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] m4 a5a.asm > a5a.s
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] gcc -c a5aMain.c
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] as 15a[K[K[Ka5a.s -o a5a.s[Ko
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] gcc a5aMain.o a5a.o -o a5a
+[?2004l]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] ./a5a [K
+[?2004l[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 1
+
+Enter the positive integer value to be enqueued: 6
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 1
+
+Enter the positive integer value to be enqueued: 4
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 1
+
+Enter the positive integer value to be enqueued: 2
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 1
+
+Enter the positive integer value to be enqueued: 6
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 3
+
+Current queue contents:
+   6 <-- head of queue
+   4
+   2
+   6 <-- tail of queue
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 2
+
+Dequeue value is 6
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 3
+
+Current queue contents:
+   6 <-- head of queue
+   4
+   2 <-- tail of queue
+
+Press the return key to continue...
+[H[2J[3J### Queue Operations ###
+
+Press 1 - Enqueue, 2 - Dequeue, 3 - Display, 4 - Exit
+Your option? 4
+
+Terminating program
+]0;stepan.susorov@csa2:~/cpsc355/CPSC355/Assignment5[?2004h[UC stepan.susorov@csa2 Assignment5] exit
+[?2004lexit
+
+Script done on 2024-03-29 22:34:27-06:00 [COMMAND_EXIT_CODE="0"]
